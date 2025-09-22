@@ -1,12 +1,15 @@
 package com.group.libraryapp.domain.user;
 
 import com.group.libraryapp.domain.user.loanHistory.UserLoanHistory;
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity // DB와 객체를 매핑
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 기본 생성자를 만들어줌
 public class User {
 
     @Id // primary key와 동일
@@ -20,8 +23,6 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
-
-    protected User() {} // JPA 사용 시 기본 생성자가 꼭 필요함!
 
     public User(String name, Integer age) {
         if (name == null || name.isBlank()) {

@@ -1,8 +1,10 @@
 package com.group.libraryapp.domain.book;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 public class Book {
 
     @Id // primary key와 동일
@@ -11,8 +13,6 @@ public class Book {
 
     @Column(nullable = false)
     private String name;
-
-    protected Book() {}
 
     public Book(String name) {
         if (name == null || name.isBlank()) {
