@@ -7,13 +7,25 @@
 
 ### Linux 명령어
 ```
+/// 관리자 권한으로 설치되어 있는 프로그램들을 최신화
+sudo yum update
+
+
+// 관리자 권한으로 프로그램 설치
+sudo yum install mysql(프로그램 이름)
+
+
+/// 프로그램의 상태 확인
+sudo systemctl status mysqld(프로그램)
+
+
 // git clone
 git clone https://github.com/minnnnnnnnnnn/Study-SpringBoot.git
 
 
 // graldew 초기 접근 권한 설정 및 build (build 폴더 생성됨)
 chmod +x ./gradlew
-./gradlew build -x test
+./gradlew build -x test // test는 생략
 
 
 // Background 환경에서 서버 실행, profile은 dev로
@@ -29,6 +41,6 @@ kill -9 112536(프로그램 번호)
 
 
 // 파일 확인
-vi nohup.out(파일 이름) // 직접 실행
+vi nohup.out(파일 이름) // vim을 이용해 직접 실행
 tail -f bohup.out // 실시간으로 뒤만 출력
 ```
