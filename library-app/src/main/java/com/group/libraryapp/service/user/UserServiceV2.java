@@ -26,7 +26,6 @@ public class UserServiceV2 {
     @Transactional
     public void saveUser(UserCreateRequest request) {
         userRepository.save(new User(request.getName(), request.getAge()));
-        throw new IllegalArgumentException();
     }
 
     @Transactional(readOnly = true) // select문만을 쓸 때 사용 가능, 약간의 성능 이득
