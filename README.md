@@ -4,3 +4,31 @@
 ### SpringBoot 공부
 
 ### 배포 주소 : http://13.125.57.245:8080/v1/index.html
+
+### Linux 명령어
+```
+// git clone
+git clone https://github.com/minnnnnnnnnnn/Study-SpringBoot.git
+
+
+// graldew 초기 접근 권한 설정 및 build (build 폴더 생성됨)
+chmod +x ./gradlew
+./gradlew build -x test
+
+
+// Background 환경에서 서버 실행, profile은 dev로
+nohup java -jar library-app/build/libs/library-app-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev &
+
+
+// 현재 실행중인 프로그램 목록 (java가 포함 된 것만)
+ps aux | grep java
+
+
+// 실행중인 프로그램 종료
+kill -9 112536(프로그램 번호)
+
+
+// 파일 확인
+vi nohup.out(파일 이름) // 직접 실행
+tail -f bohup.out // 실시간으로 뒤만 출력
+```
